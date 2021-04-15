@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NikoBot</title>
+	<style type="text/css">
+		body {
+			background: url(nikobot.jpg);
+			-moz-background-size: 100%; /* Firefox 3.6+ */
+			-webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+			-o-background-size: 100%; /* Opera 9.6+ */
+			background-size: 100%; /* Современные браузеры */
+   		}
+		   dialog.dialog-scale {
+		    visibility: visible;
+			transform: scale(1);
+		}
+		   
+		   dialog {
+		visibility: hidden;
+		transform: scale(0.1);
+		transition: transform 200ms;
+		}   
+
+		.title {
+			background-color:rgb(37, 37, 37);
+			padding: 10px 10px 10px 10px;
+			font-size:30px;
+			margin-right: 680px; 
+			margin-left: 20px;
+			font-family: 'Segoe UI';
+			font-weight: bold;
+		}
+		#zatemnenie {
+        background: rgba(43, 42, 42, 0.5);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+		}
+		#okno {
+			width: 860px;
+			height: 330px;
+			text-align: center;
+			border-radius: 5px;
+			padding: 15px;
+			color: #ffffff;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin: auto;
+			background: rgb(46, 28, 28);
+		}
+		#zatemnenie:target {display: block;}
+
+		#zatemnenie2 {
+		background: rgba(43, 42, 42, 0.5);
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: none;
+		}
+		#okno2 {
+			width: 600px;
+			height: 130px;
+			text-align: center;
+			border-radius: 5px;
+			padding: 15px;
+			color: #ffffff;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin: auto;
+			background: rgb(46, 28, 28);
+		}
+		#zatemnenie2:target {display: block;}
+
+		#zatemnenie3 {
+		background: rgba(43, 42, 42, 0.5);
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: none;
+		}
+		#okno3 {
+			width: 400px;
+			height: 90px;
+			text-align: center;
+			border-radius: 5px;
+			padding: 15px;
+			color: #ffffff;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin: auto;
+			background: rgb(46, 28, 28);
+		}
+		#zatemnenie3:target {display: block;}
+
+		.close {
+			display: inline-block;
+			color: #ffffff;
+			padding: 0 12px;
+			margin: 10px;
+			text-decoration: none;
+			background: #617ebd;
+			font-size: 18pt;
+			cursor:pointer;
+		}
+		.close:hover {background: #444496;}
+
+		.open {
+			display: inline-block;
+			color: #ffffff;
+			padding: 0 26px;
+			margin: 10px;
+			text-decoration: none;
+			background: #617ebd;
+			font-size: 18pt;
+			cursor:pointer;
+		}
+		.open:hover {background: #444496;}
+		
+		.VK {
+			background-color:rgb(32, 120, 221); 
+			height: 42px;
+			font-size:30px;
+			font-family: 'Segoe UI';
+		}
+		.nav {
+			background-color:rgb(26, 84, 170);
+			margin-bottom: 10px;
+			height: 50px;
+			font-size:30px;
+			font-family: 'Segoe UI';
+			font-weight: bold;
+		
+		}
+		.title a {
+			color: white;
+		}
+		.title div {
+			color: white;
+		}
+		.VK a {
+			color: white
+		}
+		.nav a {
+			color: white
+		}
+		.content p {
+			color: rgb(26, 6, 6)
+
+		}
+		.name {
+		background-color:rgb(17, 143, 69);
+		margin-right: 680px; 
+		margin-left: 20px;
+		font-size: 15px;
+		font-family: 'Segoe UI';
+
+	}
+		.widget {
+		background-color:rgba(5, 13, 15, 0.37);
+		padding: 10px 10px 10px 10px;
+		margin-right: 680px; 
+		margin-block-start: 20px;
+		margin-bottom: 50px;
+		margin-left: 20px;
+		font-size: 30px;
+		font-family: 'Segoe UI';
+		font-weight: bold;
+
+	}
+	.content div {
+		color: rgb(255, 255, 255)
+		
+		
+	}
+	.widget div {
+		color: white;
+		padding: 0px 0px 0px 10px;
+
+
+	}
+	.name h1 {
+		color: white;
+		padding: 10px 10px 10px 10px;
+	
+	}
+		.content {
+		background-color:rgb(39, 39, 39);
+		padding: 0px 2px 2px 10px;
+		margin-right: 680px;
+		margin-left: 20px;
+		font-size: 30px;
+		font-family: 'Segoe UI';
+		font-weight: bold;
+	
+	}
+	.content br {
+		color: rgb(255, 255, 255)
+	}
+	.content h1 {
+		color: rgb(255, 255, 255)
+	}
+	.content h2 {
+		color: rgb(255, 255, 255)
+	}
+	.content h3 {
+		color: rgb(255, 255, 255)
+	}
+	.content p {
+		color: rgb(255, 255, 255)
+	}
+</style>
+</head>
+<body>
+	<div class="nav">
+	<a href="index.html"><img src="иконка.jpg" style="padding-left: 0px; padding-top: 0px;" border="0" height="37" width="42"/></a>
+	<a href="updates.html">Updates</a>
+	<a href="about.html">NikoBot</a>
+	<a href="http://vk.com/nikoscocos_api">VK</a>
+	<a href="https://discord.com/oauth2/authorize?client_id=807540667294154763&scope=bot&permissions=0">Discord</a>
+	</div>
+	<div class="name">
+	<h1>Версия для Vkontakte: NikoBot Stable 2.03 Версия для Discord: NikoBot Beta 0.29</h1>
+	</div>
+	<div class="content">
+	<div>Апрельское обновление базы данных! Множества команд и новые фишки, всё это в нашей группе VK. Подробнее на сайте,во вкладке Updates</div>
+	</div>
+	</head>
+	
+	<body>
+	<div class="title">
+		<div id="zatemnenie">
+		<div id="okno">
+		<div>1.Лучше не проводить каких-либо DDOS-атак на сервер так,как это наказуемо! 2.Если NikoBot или сайт упал - пишите @nikit0s4 в ЛС, в VK. 3.NikoBot держится на довольно слабом сервере,поэтому пока я не найду замену он может падать! 4.По каким либо вопросам по сайту или боту писать в ЛС сообщества по сслыке VK на сайте<br></div>
+		<a href="#zatemnenie3" class="open">Я согласен(а)</a>
+		<a href="#zatemnenie2" class="open">Я не согласен(а)</a>
+		</div>
+	</div>
+	
+	<a href="#zatemnenie">Правила сайта и бота NikoBot</a>
+
+	<body>
+	<div class="title"></div>
+		<div id="zatemnenie2">
+		<div id="okno2">
+		<div>Я бы на вашем месте согласился. Давайте ещё раз?</div>
+		<a href="#zatemnenie" class="open">Давай</a>
+		<a href="#" class="open">Неа!</a>
+		</div>
+	</div>
+
+	<body>
+		<div class="title"></div>
+			<div id="zatemnenie3">
+			<div id="okno3">
+			<div>Спасибо за ознакомление!</div>
+			<a href="#" class="open">Хорошо</a>
+			</div>
+		</div>
+
+	</body>
+</body>
+<body>
+
+    <div>
+        <dialog></dialog>
+    </div>
+
+    <section>
+        <dialog></dialog>
+    </section>
+
+    <dialog></dialog>
+</body>
+
+</head>
+<body>
+	</div>
+	<div class="widget">
+	<script type="text/javascript">
+	
+		/* функция добавления ведущих нулей */
+		/* (если число меньше десяти, перед числом добавляем ноль) */
+		function zero_first_format(value)
+		{
+			if (value < 10)
+			{
+				value='0'+value;
+			}
+			return value;
+		}
+
+		/* функция получения текущей даты и времени */
+		function date_time()
+		{
+			var current_datetime = new Date();
+			var day = zero_first_format(current_datetime.getDate());
+			var month = zero_first_format(current_datetime.getMonth()+1);
+			var year = current_datetime.getFullYear();
+			var hours = zero_first_format(current_datetime.getHours());
+			var minutes = zero_first_format(current_datetime.getMinutes());
+			var seconds = zero_first_format(current_datetime.getSeconds());
+
+			return day+"."+month+"."+year+" "+hours+":"+minutes+":"+seconds;
+		}
+
+		/* выводим текущую дату и время на сайт в блок с id "current_date_time_block" */
+		document.getElementById('current_date_time_block').innerHTML = date_time();
+	</script>
+	<div>Текущее время на сервере:</div>
+	<div id="current_date_time_block2"></div>
+
+	<script type="text/javascript">
+		
+		/* каждую секунду получаем текущую дату и время */
+		/* и вставляем значение в блок с id "current_date_time_block2" */
+		setInterval(function () {
+			document.getElementById('current_date_time_block2').innerHTML = date_time();
+		}, 1000);
+	</script>
+	</div>
+</body>
+</html>
