@@ -1,1 +1,1 @@
-C:\Users\User\AppData\Local\Programs\Python\Python36\python.exe axaxa.py
+C:\Users\User\AppData\Local\Programs\Python\Python36\python.exe aye.py
