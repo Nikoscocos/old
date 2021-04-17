@@ -25,8 +25,21 @@ while True:
                         peer_id = event.message.peer_id
                         user_id = event.message.from_id
                         text = event.message.text
-                        if event.message.text == "/сайт_рестарт": # С чего начинается команда
-                            send_msg(peer_id, message=(f"Перезапускаю NikoSite"))
+                        if event.message.text.startswith("/пост "): # С чего начинается команда
+                            post = event.message.text[6:]
+                            idrand = user_id
+                            user = vk.method("users.get", {"user_ids": f"{idrand}"}) # вместо 1 подставляете айди нужного юзера
+                            fullname = user[0]['first_name'] +  ' ' + user[0]['last_name']
+                            t = datetime.datetime.now()
+                            s = t.strftime('%m.%d.%Y %H:%M:%S.%f')
+                            curtime = s[:-10]
+
+                            bar = open('forum.html', 'a', encoding='utf-8')
+                            bar.write('\n<div class="title">')
+                            bar.write(f"\n<div>Автор: {fullname}. Выложено: {curtime}</div>")
+                            bar.write(f"\n<h5>{post}</h5> \n</div>")
+                            bar.close()
+
                             user = 'Nikoscocos'
                             password = 'fursiNik0819'
 
@@ -38,7 +51,7 @@ while True:
 
                             cmd = 'git commit -m "Added Posts"'
                             subprocess.call(cmd, shell=True)
-                            send_msg(peer_id, message=(f"Перезагрузка постов"))
+                            send_msg(peer_id, message=(f"Публикую ваш пост..."))
                             cmd = "git remote set-url origin https://github.com/Nikoscocos/nikosite.github.io"
                             subprocess.call(cmd, shell=True)
 
@@ -47,13 +60,7 @@ while True:
                             child_process.sendline(user)
                             child_process.sendline(password)
                             print('returned value:', returned_value)
-                            send_msg(peer_id, message=(f"Сайт перезагружен! Обновления установлены."))
+                            send_msg(peer_id, message=(f"Ваш пост опубликован! \nНе забывайте, что оскорбления на сайте караются баном в боте! \nВаш пост размещён на: https://nikoscocos.github.io/nikosite.github.io/forum.html"))
                             print('end of commands')
-
-                        if event.message.text == "/хто": # С чего начинается команда
-                            user = vk.method("users.get", {"user_ids": 1}) # вместо 1 подставляете айди нужного юзера
-                            fullname = user[0]['first_name'] +  ' ' + user[0]['last_name']
-                            send_msg(peer_id, message=(f"{fullname}"))
-
     except Exception as e:
         print(repr(e)) # Спаситель бота
