@@ -31,12 +31,12 @@ while True:
                             user = vk.method("users.get", {"user_ids": f"{idrand}"}) # вместо 1 подставляете айди нужного юзера
                             fullname = user[0]['first_name'] +  ' ' + user[0]['last_name']
                             t = datetime.datetime.now()
-                            s = t.strftime('%m.%d.%Y %H:%M:%S.%f')
+                            s = t.strftime('%H:%M:%S.%f %m.%d.%Y')
                             curtime = s[:-10]
 
                             bar = open('forum.html', 'a', encoding='utf-8')
                             bar.write('\n<div class="title">')
-                            bar.write(f"\n<div>Автор: {fullname}. Выложено: {curtime}</div>")
+                            bar.write(f"\n<div>Автор: {fullname}. Выложено в: {curtime}</div>")
                             bar.write(f"\n<h5>{post}</h5> \n</div>")
                             bar.close()
 
