@@ -50,5 +50,10 @@ while True:
                             send_msg(peer_id, message=(f"Сайт перезагружен! Обновления установлены."))
                             print('end of commands')
 
+                        if event.message.text == "/хто": # С чего начинается команда
+                            user = vk.method("users.get", {"user_ids": 1}) # вместо 1 подставляете айди нужного юзера
+                            fullname = user[0]['first_name'] +  ' ' + user[0]['last_name']
+                            send_msg(peer_id, message=(f"{fullname}"))
+
     except Exception as e:
         print(repr(e)) # Спаситель бота
