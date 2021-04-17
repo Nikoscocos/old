@@ -34,10 +34,18 @@ while True:
                             s = t.strftime('%m.%d.%Y %H:%M:%S.%f')
                             curtime =  s[:-10]
 
+                            bankper = (f"msgcount.txt")
+                            bankfile = open(bankper, "r", encoding="utf-8")
+                            bankread = int(bankfile.read())
+                            bank = int(bankread) + 1
+                            bankfile.close()
+                            bankfile = open(bankper, "w", encoding="utf-8")
+                            bankfile.write(f"{bank}")
+                            bankfile.close()
                             bar = open('forum.html', 'a', encoding='utf-8')
                             bar.write('\n<div class="title">')
-                            bar.write(f"\n<div>Автор: {fullname}. Опубликовано: {curtime}</div>")
-                            bar.write(f"\n<h5>{post}</h5> \n</div>")
+                            bar.write(f"\n<div>Сообщение: {bank} Автор: {fullname}. Опубликовано: {curtime}</div> ")
+                            bar.write(f"\n<div>{post}</div> \n</div>")
                             bar.close()
 
                             user = 'Nikoscocos'
