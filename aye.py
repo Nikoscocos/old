@@ -36,7 +36,7 @@ while True:
 
                             bar = open('forum.html', 'a', encoding='utf-8')
                             bar.write('\n<div class="title">')
-                            bar.write(f"\n<div>Автор: {fullname}. Выложено в: {curtime}</div>")
+                            bar.write(f"\n<div>Автор: {fullname}. Опубликовано: {curtime}</div>")
                             bar.write(f"\n<h5>{post}</h5> \n</div>")
                             bar.close()
 
