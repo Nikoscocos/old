@@ -27,8 +27,6 @@ while True:
                         text = event.message.text
                         if event.message.text == "/сайт_рестарт": # С чего начинается команда
                             send_msg(peer_id, message=(f"Перезапускаю NikoSite"))
-                            user = 'Nikoscocos'
-                            password = 'fursiNik0819'
 
                             cmd = "cd C:\\Users\\User\\Desktop\\NikoBot\\NikoSite\\nikosite.github.io\\nikosite.github.io"
                             returned_value = subprocess.call(cmd, shell=True)  # returns the exit code in unix
@@ -43,9 +41,6 @@ while True:
                             subprocess.call(cmd, shell=True)
 
                             cmd = "git push "
-                            child_process = popen_spawn.PopenSpawn(cmd)
-                            child_process.sendline(user)
-                            child_process.sendline(password)
                             print('returned value:', returned_value)
                             send_msg(peer_id, message=(f"Сайт перезагружен! Обновления установлены."))
                             print('end of commands')
