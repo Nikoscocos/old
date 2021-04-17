@@ -19,6 +19,7 @@ subprocess.call(cmd, shell=True)
 
 cmd = "git push "
 child_process = popen_spawn.PopenSpawn(cmd)
-print('returned value:', returned_value)
+child_process.sendline(user)
+child_process.sendline(password)
 
 print('end of commands')
