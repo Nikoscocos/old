@@ -1,0 +1,5 @@
+subprocess
+pexpect
+requests
+vk_api
+gitpython
