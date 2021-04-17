@@ -44,7 +44,7 @@ while True:
                             bankfile.close()
                             bar = open('forum.html', 'a', encoding='utf-8')
                             bar.write('\n<div class="title">')
-                            bar.write(f"\n<div>Сообщение: {bank} Автор: {fullname}. Опубликовано: {curtime}</div> ")
+                            bar.write(f"\n<div>Сообщение {bank}: Автор: {fullname}. Опубликовано: {curtime}</div> ")
                             bar.write(f"\n<div>{post}</div> \n</div>")
                             bar.close()
 
