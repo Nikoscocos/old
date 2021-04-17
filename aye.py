@@ -31,8 +31,8 @@ while True:
                             user = vk.method("users.get", {"user_ids": f"{idrand}"}) # вместо 1 подставляете айди нужного юзера
                             fullname = user[0]['first_name'] +  ' ' + user[0]['last_name']
                             t = datetime.datetime.now()
-                            s = t.strftime('%H:%M:%S.%f %m.%d.%Y')
-                            curtime = s[:-10]
+                            s = t.strftime('%m.%d.%Y %H:%M:%S.%f')
+                            curtime =  s[:-10]
 
                             bar = open('forum.html', 'a', encoding='utf-8')
                             bar.write('\n<div class="title">')
