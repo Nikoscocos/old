@@ -17,7 +17,10 @@ subprocess.call(cmd, shell=True)
 cmd = "git remote set-url origin https://github.com/Nikoscocos/nikosite.github.io"
 subprocess.call(cmd, shell=True)
 
-cmd = "git push -u origin main"
-subprocess.call(cmd, shell=True)
+cmd = "git push "
+child_process = popen_spawn.PopenSpawn(cmd)
+child_process.sendline(user)
+child_process.sendline(password)
+print('returned value:', returned_value)
 
 print('end of commands')
