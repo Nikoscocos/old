@@ -1,257 +1,102 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>NikoSite</title>
-	<style type="text/css">
-		* {
-			border-radius: 15px;
-		}
-		body {
-			background: url(main.jpg);
-			-moz-background-size: 100%; /* Firefox 3.6+ */
-			-webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
-			-o-background-size: 100%; /* Opera 9.6+ */
-			background-size: 100%; /* Современные браузеры */
-   		}
-		   dialog.dialog-scale {
-		    visibility: visible;
-			transform: scale(1);
-		}
-		   
-		   dialog {
-		visibility: hidden;
-		transform: scale(0.1);
-		transition: transform 200ms;
-		}   
+<!-- saved from url=(0051)https://nikoscocos.github.io/nikosite.com/blog.html -->
 
-		.title {
-			background-color:rgba(22, 26, 29, 0.288);
-			padding: 10px 10px 10px 10px;
-			font-size:30px;
-			margin-right: 680px; 
-			margin-left: 20px;
-			font-family: 'Segoe UI';
-			font-weight: bold;
-		}
-		#zatemnenie {
-        background: rgba(43, 42, 42, 0.5);
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: none;
-		}
-		#okno {
-			width: 860px;
-			height: 330px;
-			text-align: center;
-			border-radius: 5px;
-			padding: 15px;
-			color: #ffffff;
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			margin: auto;
-			background: rgb(46, 28, 28);
-		}
-		#zatemnenie:target {display: block;}
-
-		#zatemnenie2 {
-		background: rgba(43, 42, 42, 0.5);
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		top: 0;
-		left: 0;
-		display: none;
-		}
-		#okno2 {
-			width: 600px;
-			height: 130px;
-			text-align: center;
-			border-radius: 5px;
-			padding: 15px;
-			color: #ffffff;
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			margin: auto;
-			background: rgb(46, 28, 28);
-		}
-		#zatemnenie2:target {display: block;}
-
-		#zatemnenie3 {
-		background: rgba(43, 42, 42, 0.5);
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		top: 0;
-		left: 0;
-		display: none;
-		}
-		#okno3 {
-			width: 400px;
-			height: 90px;
-			text-align: center;
-			border-radius: 5px;
-			padding: 15px;
-			color: #ffffff;
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			margin: auto;
-			background: rgb(46, 28, 28);
-		}
-		#zatemnenie3:target {display: block;}
-
-		.close {
-			display: inline-block;
-			color: #ffffff;
-			padding: 0 12px;
-			margin: 10px;
-			text-decoration: none;
-			background: #617ebd;
-			font-size: 18pt;
-			cursor:pointer;
-		}
-		.close:hover {background: #444496;}
-
-		.open {
-			display: inline-block;
-			color: #ffffff;
-			padding: 0 26px;
-			margin: 10px;
-			text-decoration: none;
-			background: #617ebd;
-			font-size: 18pt;
-			cursor:pointer;
-		}
-		.open:hover {background: #444496;}
-		
-		.VK {
-			background-color:rgb(32, 120, 221); 
-			height: 42px;
-			font-size:30px;
-			font-family: 'Segoe UI';
-		}
-		.nav {
-			background-color:rgb(26, 84, 170);
-			margin-bottom: 10px;
-			height: 50px;
-			font-size:30px;
-			font-family: 'Segoe UI';
-			font-weight: bold;
-		
-		}
-		.title a {
-			color: white;
-		}
-		.title div {
-			color: white;
-		}
-		.VK a {
-			color: white
-		}
-		.nav a {
-			color: white
-		}
-		.content p {
-			color: rgb(26, 6, 6)
-
-		}
-		.name {
-		background-color:rgba(25, 29, 36, 0.219);
-		margin-right: 680px; 
-		margin-left: 20px;
-		font-size: 15px;
-		font-family: 'Segoe UI';
-
-	}
-		.widget {
-		background-color:rgb(196, 54, 148);
-		padding: 10px 10px 10px 10px;
-		margin-right: 680px; 
-		margin-block-start: 20px;
-		margin-bottom: 50px;
-		margin-left: 20px;
-		font-size: 30px;
-		font-family: 'Segoe UI';
-		font-weight: bold;
-
-	}
-	.content div {
-		color: rgb(255, 255, 255)
-		
-		
-	}
-	.widget div {
-		color: white;
-		padding: 0px 0px 0px 10px;
-
-
-	}
-	.name h1 {
-		color: white;
-		padding: 10px 10px 10px 10px;
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 	
-	}
-		.content {
-		background-color:rgb(181, 14, 187);
-		padding: 0px 2px 2px 10px;
-		margin-right: 680px;
-		margin-left: 20px;
-		font-size: 30px;
-		font-family: 'Segoe UI';
-		font-weight: bold;
+
+
+	<title>NeuronNET</title>
 	
-	}
-	.content br {
-		color: rgb(255, 255, 255)
-	}
-	.content h1 {
-		color: rgb(255, 255, 255)
-	}
-	.content h2 {
-		color: rgb(255, 255, 255)
-	}
-	.content h3 {
-		color: rgb(255, 255, 255)
-	}
-	.content p {
-		color: rgb(255, 255, 255)
-	}
+		<link rel="shortcut icon" href="https://nikoscocos.github.io/nikosite.com/icon.png" type="image/png">
+	<meta name="Description" content="Nikoscocos&#39;s NeuronNET!"><meta property="og:image" content="https://sun9-18.userapi.com/impg/NiB_qGv7Ez8DyoZoENY_uLh-msa8yL7dBndxBA/PzQaLv0Tje8.jpg?size=72x63&amp;quality=96&amp;sign=0f6e15c4fa6120b578b4625620b63f1a&amp;type=album"><meta property="og:title" content="NeuronNET"><meta property="og:description" content="арврввиииывивиыиви)))))"><meta property="og:url" content="NeuronNET"><meta property="og:locale" content="ru_RU"><meta property="og:site_name" content="Nikoscocos&#39;s"><meta property="og:type" content="website"><meta property="nikosite-main" content="NeuronNET"><link rel="stylesheet" href="./Blog_files/fonts"><link rel="stylesheet" href="./Blog_files/main.built.css" type="text/css"><link rel="stylesheet" href="./Blog_files/overview.built.css" type="text/css"><script src="./Blog_files/head.built.js.Без названия" type="text/javascript" charset="utf-8"></script>
+
+<style>
+	body {
+    background: rgb(240, 235, 235); /* Цвет фона */
+   }
+   .center {
+    width: 100%; /* Ширина элемента в пикселах */
+    padding: 10px; /* Поля вокруг текста */
+    margin: auto; /* Выравниваем по центру */
+    background: rgb(90, 91, 189); /* Цвет фона */
+	color: white;
+	position: sticky;
+	top: 0;
+	box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2);
+   }
+   .about {
+    width: 85%; /* Ширина элемента в пикселах */
+    margin: auto; /* Выравниваем по центру */
+	margin-top: 15px;
+	background: rgb(240, 235, 235);
+   }
+   .center2 {
+	border-radius: 5px;
+    width: 85%; /* Ширина элемента в пикселах */
+    padding: 10px; /* Поля вокруг текста */
+    margin: auto; /* Выравниваем по центру */
+	margin-top: 10px;
+    background: rgb(255, 255, 255); /* Цвет фона */
+   }
+   .line { 
+    border-left: 2px solid rgb(255, 255, 255); /* Параметры линии */ 
+    margin-left: 10px; /* Отступ слева */
+    padding-left: 5px; /* Расстояние от линии до текста */
+	color: white; 
+   }
+   .wow {
+	color: white; 
+   }
+   img {
+	margin: auto;
+	border-radius: 3px;
+   }
+   .inpost {
+	margin: auto;
+	border-radius: 50px;
+   }
+   text {
+	margin: auto;
+	border-radius: 3px;
+	margin-top: 10px;
+	margin-left: 800px;
+   }
+
+   .w {
+	   color: rgb(255, 255, 255);
+   }
+   h1 {
+	   text-align: left;
+   }
+  </style>
 </style>
+
 </head>
 <body>
-	<div class="nav">
-	<a href="index.html"><img src="иконка.jpg" style="padding-left: 0px; padding-top: 0px;" border="0" height="37" width="42"/></a>
-	<a href="updates.html">Updates</a>
-	<a href="about.html">NikoBot</a>
-	<a href="http://vk.com/nikoscocos_api">VK</a>
-	<a href="https://discord.com/oauth2/authorize?client_id=807540667294154763&scope=bot&permissions=0">Discord</a>
+	<div class="center">
+		<b>
+			<a class="wow" href="#">WӦW</a><a class="line" href="#">о сайте</a><a class="line" href="#">регистрация</a><a class="line" href="#">войти</a>
+	</b>
 	</div>
-	<div class="name">
-	<h1>NikoSite - Главная страница</h1>
+	<div class="center2">
+		<img src="/static/{{ava}}"width="100" height="100"></img>
+		<h4><b>Никита Фурсенко &#10003;
+			</b><h6>online</h6></h4>
+		<button type="submit" onclick="window.location.href='https://danilebanov.pythonanywhere.com/addfriend'" class="btn btn-primary"><b>Добавить в друзья</b></button>
 	</div>
-	<div class="content">
-	<div>Важная информация</div>
+	<div class="center2">
+		<h5 class="lineme">О себе:<br>13 лет, разработчик сайта, нейросети и бота. Любимые языки: C#, Python.<br>Полит. взгляды:<br>Я за ЛДПР</h5>
 	</div>
-	</head>
-	
-	<body>
-	<div class="title">
-		<div>Сайт будет пополняться разными постами,но не сразу.</div>
-		<div>Все будущие обновления NikoBot'а расписаны на сайте.</div>
-		<div>Почётные пользователи нашего бота: @catweird @afagp1 @theagrik и @kekich25</div>
-		<div>Теперь можете пройтись по вкладкам и дополнениям на сайте!</div>
-		<div>UPD: На этом сайте не будет ГДЗ Виленкин 6 класс,хотя всё возможно</div>
-		</div>
-</body>
-</html>
+	<div class="center2">
+		<p><input type="text" class="form-control" id="blyat" name="stenpost" placeholder="Напишите что-нибудь..."></p>
+		<button type="submit" id="comment-add" class="btn btn-primary"><b>Опубликовать</b></button>
+	</div>
+	<div class="center2">
+		<img class="inpost" src="../users/Nikoscocos/ava.jpg"width="30" height="30">&nbsp;&nbsp;<b>Никита Фурсенко</b> в 15:57</img>
+		<br><h1></h1><h5>И так, я запостил у себя на странице пост, при этом он ещё и на моём сайте. Я хотел бы передать всем привет так, как всего через неделю будет запуск этого дизайна. Кстати, питон лучше, чем PHP так, как этот сайт написан при помощи Python 3.8 и Flask</h5>
+	</div>
+	<div class="about">
+		<h6>WOW designed by <a href="https://vk.com/nikit0s4">@nikit0s4</a> in 2021</h6>
+	</div>
+</main></body></html>
